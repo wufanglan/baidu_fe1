@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script type="text/javascript">
+	var EventUtil = {
+		addHandler:function(element,type,handler){
+			if(element.addEventListener){
+				element.addEventListener(type,handler,false);
+			}else if(element.attachEvent){
+				element.attachEvent("on"+type,handler);
+			}else{
+				element["on"+type] = handler;
+			}
+		},
+		removeHandler:function(element,type,handler){
+
+		},
+		getEvent:function(event){
+			return event ? event : window.event;
+		},
+		getTarget:function(event){
+			return event.target || event.srcElement;
+		},
+		preventDefault:function(event){
+			if(event.preventDefault){
+				event.preventDefault();
+			}else{
+				event.returnValue = false;
+			}
+		},
+		stopPropagation:function(event){
+			if(event.stopPropagation){
+				event.stopPropagation();
+			}else{
+				event.cancelBubble = true;
+			}
+
+		}
+	};
+	EventUtil.addHandler(window,"load",function(event){
+		var list = document.getElementById("myList");
+		EventUtil.addHandler(document,"DOMSubtreeModifid",function(event){
+			alert(event.type);
+			alert(event.target);
+
+		});
+		EventUtil.addHandler(document,"DOMNodeRemoved",function(event){
+			alert(event.type);
+			alert(event.target);
+			alert(event.relatedNode);
+
+		});
+		EventUtil.addHandler(list.firstChild,"DOMNodeRemovedFromDocument",function(event){
+			alert(event.type);
+			alert(event.target);
+
+		});
+		list.parentNode.removeChild(list);
+
+	});
+	</script>
+</head>
+<body>
+	<ul id="myList" >
+		<li>Item1</li>
+		<li>Item2</li>
+		<li>Item3</li>
+		<li>Item4</li>
+	</ul>
+</body>
+</html>

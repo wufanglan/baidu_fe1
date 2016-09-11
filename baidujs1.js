@@ -77,10 +77,12 @@ function delBtnHandle(city) {
 }
 
 function init() {
+    var btn = document.getElementsByClassName("btn");
     
     // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
     $('body').on('click', '#add-btn', function() {
         addBtnHandle();
+        
         
     });
     
