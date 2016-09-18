@@ -1,7 +1,7 @@
 #面向对象基础概念
 * 命名空间（包含方法、属性、对象的对象）
-  * `var MYAPP = MYAPP || {};`//全局命名空间
-  * `MYAPP.event = {};`//子命名空间，在大括号里面可以定义属性和方法
+  * `var MYAPP = MYAPP || {};//全局命名空间`
+  * `MYAPP.event = {};//子命名空间，在大括号里面可以定义属性和方法`
 * 标准内置对象
   * Math、Object、Array、String
   * 可以直接使用这些内置对象的方法如Math.random()获得随机数
