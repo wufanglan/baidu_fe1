@@ -10,7 +10,7 @@
   * 继承
     * 原型链
       * （将超类型的实例赋值给子类型类的原型对象）
-      * SubType.prototype = new SuperType();   
+      `SubType.prototype = new SuperType();`   
     * 借用构造函数
       * （在子类型构造函数内部调用超类构造函数，通过call或者apply方法在新创建的对象上执行构造函数）
       ``` 
