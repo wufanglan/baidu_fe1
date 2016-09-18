@@ -13,39 +13,49 @@
       * SubType.prototype = new SuperType();   
     * 借用构造函数
       * （在子类型构造函数内部调用超类构造函数，通过call或者apply方法在新创建的对象上执行构造函数）
-      * function SubType(){  
+      ``` 
+      function SubType(){  
       SuperType.call(this);  
       }
+      ```
     * 组合继承
       * 构造函数继承属性，原型链继承方法
-      * function SubType(name,age){  
+      ```
+      function SubType(name,age){  
       SuperType.call(this,name);  
       this.age = age;  
       }
-      * SubType.prototype = new SuperType();   
+      SubType.prototype = new SuperType();   
       SubType.prototype.constructor = SubType;  
       SubType.prototype.sayAge = function(){}
+      ```
     * 原型式继承
       * 借用原型可以基于已有的对象创建新对象
-      * function object(o){  
+      ```
+      function object(o){  
       function F(){  
       F.prototype = o;  
       return new F();  
       }
+      ```
     * 寄生式继承
       * 创建一个仅用于封装继承过程的函数，该函数内部以某种方式来增强对象，最后返回该对象
-      * function createAnother(o){  
+      ```
+      function createAnother(o){  
       var clone = object(o);  
       clone.sayhi = function(){}  
       return clone;  
       }  
+      ```
     * 寄生组合式继承
       * 通过借用函数来继承属性，原型链的混成形式来继承方法
-      * function inheritProperty(SubType,SuperType){  
+      ```
+      function inheritProperty(SubType,SuperType){  
       var prototype = object(SuperType.prototype);//创建对象  
       prototype.constructor = SubType;//增强对象  
       SubType.prototype = prototype;//指定对象  
       }
+      ```
   * 封装
   * 抽象
   * 多态
