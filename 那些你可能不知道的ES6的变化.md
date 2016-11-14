@@ -1,4 +1,5 @@
-#那些你可能不知道的ECMAScript 2016的变化
+#那些你可能不知道的ECMAScript 2016的变化  
+[原文链接]( https://www.nczonline.net/blog/2016/10/the-ecmascript-2016-change-you-probably-dont-know/)  
 发表于2016年8月18日，作者Nicholas C. Zakas  
 相比于ECMAScript 6（也被称作 ECMAScript 2015），ECMAScript 2016 是javascript语言规范的一个小版本的更新。这是由于ECMAScript版本~~将要按年周期来发布的决定~~ 按年更新，~~就好像是当所有的特性都准备好了就可以像快照一样有效~~每一次的更新就像是所有新特性的就绪集合。像这样，大多数的~~资源~~文章仅仅列出了两条在ECMAScript 2016的重要改变：  
 1. 新增求幂（**）运算符  
